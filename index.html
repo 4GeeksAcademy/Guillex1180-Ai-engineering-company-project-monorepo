@@ -4,217 +4,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexova | Consultora de Recursos Humanos</title>
-
+    <title>TrackFlow | Operaciones de Ultima Milla y Almacen</title>
     <meta name="description"
-        content="Nexova es una consultora de recursos humanos y adquisición de talento con presencia en España y Estados Unidos.">
+        content="TrackFlow optimiza la ultima milla y la operacion de almacen para e-commerce y retail en Mexico y Espana.">
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            ink: "#0f172a",
+                            sand: "#fff8eb",
+                            teal: "#0f766e",
+                            orange: "#f97316"
+                        }
+                    },
+                    boxShadow: {
+                        soft: "0 12px 35px rgba(2, 6, 23, 0.08)"
+                    }
+                }
+            }
+        };
+    </script>
 
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "Nexova",
-      "description": "Consultora de recursos humanos y adquisición de talento",
-      "url": "https://nexova.com",
-      "foundingDate": "2011",
-      "address": [
+      "name": "TrackFlow",
+      "url": "https://trackflow.example.com",
+      "description": "Operacion de ultima milla y servicios de almacenamiento para e-commerce y retail.",
+      "foundingDate": "2016",
+      "areaServed": [
         {
-          "@type": "PostalAddress",
-          "addressCountry": "ES",
-          "addressLocality": "Valencia",
-          "addressRegion": "Comunidad Valenciana"
+          "@type": "Country",
+          "name": "Mexico"
         },
         {
-          "@type": "PostalAddress",
-          "addressCountry": "US",
-          "addressLocality": "Miami",
-          "addressRegion": "Florida"
+          "@type": "Country",
+          "name": "Espana"
         }
       ],
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+34-960-123-456",
-        "contactType": "customer service",
-        "availableLanguage": ["Spanish", "English"]
+        "contactType": "sales",
+        "email": "alianzas@trackflow.example.com",
+        "availableLanguage": ["es", "en"]
       },
       "sameAs": [
-        "https://linkedin.com/company/nexova",
-        "https://instagram.com/nexova"
+        "https://www.linkedin.com/company/trackflow"
       ]
     }
     </script>
 </head>
 
-<body class="bg-slate-50 text-slate-900">
+<body class="bg-brand-sand text-brand-ink antialiased">
+    <a href="#contenido" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-white focus:px-3 focus:py-2 focus:font-semibold focus:text-brand-ink">
+        Saltar al contenido principal
+    </a>
 
-    <header class="bg-white shadow">
-        <nav class="max-w-7xl mx-auto flex justify-between items-center px-6 py-5"
-            aria-label="Navegación principal">
-
-            <a href="index.html" class="text-3xl font-bold text-blue-700">
-                Nexova
+    <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur">
+        <nav class="mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-4" aria-label="Navegacion principal">
+            <a href="index.html" class="text-2xl font-black tracking-tight text-brand-teal" aria-label="TrackFlow inicio">
+                TrackFlow
             </a>
 
-            <ul class="hidden md:flex gap-8 font-medium">
-                <li><a href="#inicio" class="hover:text-blue-700">Inicio</a></li>
-                <li><a href="#servicios" class="hover:text-blue-700">Servicios</a></li>
-                <li><a href="application.html" class="hover:text-blue-700">Talento</a></li>
-                <li><a href="#contacto" class="hover:text-blue-700">Contacto</a></li>
+            <ul class="ml-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-semibold sm:text-sm md:ml-8 md:gap-7" role="list">
+                <li><a href="#inicio" class="transition hover:text-brand-teal">Inicio</a></li>
+                <li><a href="#beneficios" class="transition hover:text-brand-teal">Beneficios</a></li>
+                <li><a href="#operacion" class="transition hover:text-brand-teal">Operacion</a></li>
+                <li><a href="#contacto" class="transition hover:text-brand-teal">Contacto</a></li>
             </ul>
 
             <a href="application.html"
-                class="bg-blue-700 text-white px-5 py-3 rounded-lg font-semibold hover:bg-blue-800">
-                Únete a nuestro banco de talento
+                class="rounded-xl bg-brand-orange px-3 py-2 text-xs font-bold text-white shadow-soft transition hover:brightness-95 sm:px-4 sm:py-2.5 sm:text-sm">
+                Solicitar Diagnostico
             </a>
         </nav>
     </header>
 
-    <main>
-        <section id="inicio"
-            class="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
+    <main id="contenido">
+        <section id="inicio" class="relative overflow-hidden">
+            <div class="absolute -left-24 -top-16 h-56 w-56 rounded-full bg-brand-orange/15 blur-2xl"></div>
+            <div class="absolute -right-20 top-24 h-64 w-64 rounded-full bg-brand-teal/15 blur-2xl"></div>
 
-            <div>
-                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
-                    Construimos equipos excepcionales para empresas en crecimiento
-                </h1>
-
-                <p class="text-lg text-slate-600 mb-8">
-                    Consultora de recursos humanos y adquisición de talento con más de 10 años ayudando a empresas de
-                    tecnología, retail y servicios financieros a encontrar y desarrollar el mejor talento.
-                </p>
-
-                <a href="application.html"
-                    class="inline-block bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-800">
-                    Únete a nuestro banco de talento
-                </a>
-            </div>
-
-            <div>
-                <img
-                    src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80"
-                    alt="Equipo de profesionales trabajando en recursos humanos"
-                    class="w-full h-80 object-cover rounded-3xl shadow-lg">
-            </div>
-        </section>
-
-        <section id="servicios" class="bg-white py-20">
-            <div class="max-w-7xl mx-auto px-6">
-                <h2 class="text-4xl font-bold text-center mb-14">
-                    Nuestros Servicios
-                </h2>
-
-                <div class="grid md:grid-cols-3 gap-8">
-                    <article class="bg-slate-50 p-8 rounded-2xl shadow">
-                        <h3 class="text-2xl font-bold mb-4">Headhunting Ejecutivo</h3>
-                        <ul class="list-disc pl-5 space-y-2 text-slate-600">
-                            <li>Búsqueda y selección de perfiles ejecutivos y mandos medios.</li>
-                            <li>Proceso personalizado con garantía de reemplazo.</li>
-                        </ul>
-                    </article>
-
-                    <article class="bg-slate-50 p-8 rounded-2xl shadow">
-                        <h3 class="text-2xl font-bold mb-4">Outsourcing de Atención al Cliente</h3>
-                        <ul class="list-disc pl-5 space-y-2 text-slate-600">
-                            <li>Equipos especializados para empresas tecnológicas.</li>
-                            <li>Formación continua y supervisión dedicada.</li>
-                        </ul>
-                    </article>
-
-                    <article class="bg-slate-50 p-8 rounded-2xl shadow">
-                        <h3 class="text-2xl font-bold mb-4">Formación Corporativa</h3>
-                        <ul class="list-disc pl-5 space-y-2 text-slate-600">
-                            <li>Programas de soft skills y liderazgo.</li>
-                            <li>Cursos presenciales y en línea adaptados a cada organización.</li>
-                        </ul>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-20">
-            <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12">
+            <div class="mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 md:grid-cols-2 md:py-24 lg:gap-16">
                 <div>
-                    <h2 class="text-4xl font-bold mb-6">
-                        ¿Por qué Nexova?
-                    </h2>
-
-                    <p class="text-lg text-slate-600">
-                        Desde 2011 ayudamos a organizaciones a encontrar, desarrollar y potenciar el mejor talento.
+                    <p class="mb-4 inline-flex rounded-full border border-brand-teal/30 bg-brand-teal/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-teal">
+                        Ultima Milla + Almacen
                     </p>
+                    <h1 class="mb-6 text-4xl font-black leading-tight md:text-6xl">
+                        Entregas mas rapidas, operacion mas simple, clientes mas felices.
+                    </h1>
+                    <p class="mb-8 max-w-xl text-lg text-slate-700">
+                        En TrackFlow conectamos picking, ruteo y entrega para que tu negocio escale sin perder control operativo.
+                        Disenamos soluciones para e-commerce, retail y distribuidores con cobertura en Mexico y Espana.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="application.html"
+                            class="rounded-xl bg-brand-teal px-6 py-3 font-bold text-white transition hover:brightness-95">
+                            Quiero una propuesta
+                        </a>
+                        <a href="#beneficios"
+                            class="rounded-xl border border-slate-300 bg-white px-6 py-3 font-bold transition hover:border-slate-500">
+                            Ver beneficios
+                        </a>
+                    </div>
                 </div>
 
-                <div class="grid gap-4">
-                    <div class="bg-white rounded-xl shadow p-5">
-                        12 años de experiencia en el mercado latinoamericano
-                    </div>
+                <figure class="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-soft">
+                    <img
+                        src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1400&q=80"
+                        alt="Centro logistico con estanterias y operadores preparando pedidos"
+                        class="h-full w-full object-cover">
+                </figure>
+            </div>
+        </section>
 
-                    <div class="bg-white rounded-xl shadow p-5">
-                        Presencia regional: España y Estados Unidos
-                    </div>
+        <section id="beneficios" class="bg-white py-16 md:py-20 lg:py-24">
+            <div class="mx-auto max-w-7xl px-5">
+                <h2 class="mb-3 text-3xl font-black md:text-4xl">Por que empresas eligen TrackFlow</h2>
+                <p class="mb-10 max-w-3xl text-slate-600">Unificamos indicadores de almacen y reparto para que cada decision se base en datos operativos reales.</p>
 
-                    <div class="bg-white rounded-xl shadow p-5">
-                        +500 procesos exitosos de selección completados
-                    </div>
+                <div class="grid gap-5 md:grid-cols-3">
+                    <article class="rounded-2xl border border-slate-200 bg-brand-sand p-6 shadow-soft">
+                        <h3 class="mb-3 text-xl font-bold">SLA de entrega consistente</h3>
+                        <p class="text-slate-700">Rutas dinamicas y control por franja horaria para reducir reintentos y aumentar entregas en primer intento.</p>
+                    </article>
 
-                    <div class="bg-white rounded-xl shadow p-5">
-                        Especialización sectorial en tecnología, retail y finanzas
-                    </div>
+                    <article class="rounded-2xl border border-slate-200 bg-brand-sand p-6 shadow-soft">
+                        <h3 class="mb-3 text-xl font-bold">Visibilidad de punta a punta</h3>
+                        <p class="text-slate-700">Seguimiento de pedidos, incidencias y productividad del almacen desde un mismo tablero operativo.</p>
+                    </article>
+
+                    <article class="rounded-2xl border border-slate-200 bg-brand-sand p-6 shadow-soft">
+                        <h3 class="mb-3 text-xl font-bold">Escalado estacional sin caos</h3>
+                        <p class="text-slate-700">Protocolos para picos de demanda con activacion rapida de flota, personal temporal y control de costos.</p>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <section id="contacto" class="bg-blue-700 text-white py-20">
-            <div class="max-w-7xl mx-auto px-6">
-                <h2 class="text-4xl font-bold mb-10">
-                    Contacto
-                </h2>
+        <section id="operacion" class="py-16 md:py-20 lg:py-24">
+            <div class="mx-auto grid max-w-7xl gap-10 px-5 md:grid-cols-2">
+                <div>
+                    <h2 class="mb-5 text-3xl font-black md:text-4xl">Operacion pensada para resultados</h2>
+                    <ul class="space-y-4 text-slate-700">
+                        <li class="rounded-xl border border-slate-200 bg-white p-4 shadow-soft">
+                            Cobertura urbana y regional con nodos operativos en CDMX, Guadalajara, Madrid y Barcelona.
+                        </li>
+                        <li class="rounded-xl border border-slate-200 bg-white p-4 shadow-soft">
+                            Integracion con plataformas de e-commerce y WMS para sincronizar inventario y despacho.
+                        </li>
+                        <li class="rounded-xl border border-slate-200 bg-white p-4 shadow-soft">
+                            Soporte operacional bilingue para equipos en Mexico y Espana.
+                        </li>
+                    </ul>
+                </div>
 
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div>
-                        <h3 class="font-bold mb-2">Email</h3>
-                        <a href="mailto:contacto@nexova.com" class="underline">
-                            contacto@nexova.com
-                        </a>
-                    </div>
+                <div class="rounded-2xl border border-slate-200 bg-white p-8 shadow-soft">
+                    <h3 class="mb-4 text-2xl font-black">Indicadores que movemos</h3>
+                    <dl class="space-y-4 text-slate-700">
+                        <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                            <dt>Tiempo promedio de entrega</dt>
+                            <dd class="font-black text-brand-teal">-22%</dd>
+                        </div>
+                        <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                            <dt>Entregas exitosas al primer intento</dt>
+                            <dd class="font-black text-brand-teal">+17%</dd>
+                        </div>
+                        <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                            <dt>Errores de picking en almacen</dt>
+                            <dd class="font-black text-brand-teal">-31%</dd>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <dt>Satisfaccion del cliente final</dt>
+                            <dd class="font-black text-brand-teal">4.7 / 5</dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+        </section>
 
-                    <div>
-                        <h3 class="font-bold mb-2">Valencia</h3>
-                        <a href="tel:+34960123456" class="underline">
-                            +34 960 123 456
-                        </a>
-                    </div>
-
-                    <div>
-                        <h3 class="font-bold mb-2">Miami</h3>
-                        <a href="tel:+13055550191" class="underline">
-                            +1 305 555 0191
-                        </a>
-                    </div>
+        <section id="contacto" class="bg-brand-ink py-16 text-white md:py-20 lg:py-24">
+            <div class="mx-auto grid max-w-7xl gap-10 px-5 md:grid-cols-2 md:items-center">
+                <div>
+                    <h2 class="mb-4 text-3xl font-black md:text-4xl">Inicia tu diagnostico logistico</h2>
+                    <p class="text-slate-300">Comparte tus datos operativos y te proponemos un plan inicial de mejora para ultima milla y almacen.</p>
+                </div>
+                <div class="grid gap-4 rounded-2xl border border-white/15 bg-white/5 p-6">
+                    <a href="mailto:alianzas@trackflow.example.com" class="font-semibold underline decoration-brand-orange decoration-2 underline-offset-4">alianzas@trackflow.example.com</a>
+                    <p><span class="font-bold">Mexico:</span> +52 55 7001 2840</p>
+                    <p><span class="font-bold">Espana:</span> +34 91 520 1344</p>
+                    <a href="application.html"
+                        class="mt-2 inline-block w-fit rounded-xl bg-brand-orange px-5 py-3 font-bold text-white transition hover:brightness-95">
+                        Completar formulario
+                    </a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="bg-slate-900 text-white py-8">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p>
-                © 2025 Nexova. Todos los derechos reservados.
-            </p>
-
-            <div class="flex gap-6">
-                <a href="https://linkedin.com/company/nexova" class="hover:text-blue-400">
-                    LinkedIn
-                </a>
-
-                <a href="https://instagram.com/nexova" class="hover:text-blue-400">
-                    Instagram
-                </a>
-            </div>
+    <footer class="border-t border-slate-200 bg-white py-8">
+        <div class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-3 px-5 text-sm text-slate-600 md:flex-row md:items-center">
+            <p>© 2026 TrackFlow. Todos los derechos reservados.</p>
+            <p>Ultima milla y almacen para empresas en crecimiento.</p>
         </div>
     </footer>
-
 </body>
 
 </html>
