@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrackFlow | Operaciones de Ultima Milla y Almacen</title>
+    <title>TrackFlow | Logistica para e-commerce en Estados Unidos y Espana</title>
     <meta name="description"
-        content="TrackFlow optimiza la ultima milla y la operacion de almacen para e-commerce y retail en Mexico y Espana.">
+        content="TrackFlow ofrece gestion de almacenes, entregas de ultima milla y logistica inversa para marcas de e-commerce en Estados Unidos y Espana.">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -15,14 +15,18 @@
                 extend: {
                     colors: {
                         brand: {
-                            ink: "#0f172a",
-                            sand: "#fff8eb",
-                            teal: "#0f766e",
-                            orange: "#f97316"
+                            ink: "#10233f",
+                            mist: "#eef4f7",
+                            teal: "#0e7490",
+                            coral: "#ea580c",
+                            steel: "#d7e2e8"
                         }
                     },
                     boxShadow: {
-                        soft: "0 12px 35px rgba(2, 6, 23, 0.08)"
+                        soft: "0 18px 40px rgba(16, 35, 63, 0.12)"
+                    },
+                    backgroundImage: {
+                        grid: "radial-gradient(circle at 1px 1px, rgba(16, 35, 63, 0.08) 1px, transparent 0)"
                     }
                 }
             }
@@ -34,183 +38,247 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "TrackFlow",
-      "url": "https://trackflow.example.com",
-      "description": "Operacion de ultima milla y servicios de almacenamiento para e-commerce y retail.",
-      "foundingDate": "2016",
-      "areaServed": [
+      "description": "Gestión de almacenes y entregas de última milla para e-commerce",
+      "url": "https://trackflow.com",
+      "foundingDate": "2009",
+      "address": [
         {
-          "@type": "Country",
-          "name": "Mexico"
+          "@type": "PostalAddress",
+          "addressCountry": "US",
+          "addressLocality": "Los Ángeles",
+          "addressRegion": "California"
         },
         {
-          "@type": "Country",
-          "name": "Espana"
+          "@type": "PostalAddress",
+          "addressCountry": "ES",
+          "addressLocality": "Zaragoza",
+          "addressRegion": "Aragón"
         }
       ],
       "contactPoint": {
         "@type": "ContactPoint",
+        "telephone": "+1-213-555-0147",
         "contactType": "sales",
-        "email": "alianzas@trackflow.example.com",
-        "availableLanguage": ["es", "en"]
+        "availableLanguage": ["Spanish", "English"]
       },
-      "sameAs": [
-        "https://www.linkedin.com/company/trackflow"
+      "sameAs": ["https://linkedin.com/company/trackflow"],
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Estados Unidos"
+        },
+        {
+          "@type": "Country",
+          "name": "Spain"
+        }
       ]
     }
     </script>
 </head>
 
-<body class="bg-brand-sand text-brand-ink antialiased">
+<body class="bg-brand-mist bg-grid bg-[size:24px_24px] text-brand-ink antialiased">
     <a href="#contenido" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-white focus:px-3 focus:py-2 focus:font-semibold focus:text-brand-ink">
         Saltar al contenido principal
     </a>
 
-    <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur">
-        <nav class="mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-4" aria-label="Navegacion principal">
-            <a href="index.html" class="text-2xl font-black tracking-tight text-brand-teal" aria-label="TrackFlow inicio">
+    <header class="sticky top-0 z-50 border-b border-brand-steel/80 bg-white/90 backdrop-blur">
+        <nav class="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between gap-4 px-5 py-4" aria-label="Navegacion principal">
+            <a href="index.html" class="text-2xl font-black tracking-tight text-brand-ink" aria-label="TrackFlow inicio">
                 TrackFlow
             </a>
 
-            <ul class="ml-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-semibold sm:text-sm md:ml-8 md:gap-7" role="list">
+            <ul class="order-3 flex w-full flex-wrap items-center gap-x-5 gap-y-2 text-sm font-semibold md:order-2 md:w-auto md:justify-center" role="list">
                 <li><a href="#inicio" class="transition hover:text-brand-teal">Inicio</a></li>
-                <li><a href="#beneficios" class="transition hover:text-brand-teal">Beneficios</a></li>
-                <li><a href="#operacion" class="transition hover:text-brand-teal">Operacion</a></li>
+                <li><a href="#servicios" class="transition hover:text-brand-teal">Servicios</a></li>
+                <li><a href="#cobertura" class="transition hover:text-brand-teal">Cobertura</a></li>
                 <li><a href="#contacto" class="transition hover:text-brand-teal">Contacto</a></li>
             </ul>
 
             <a href="application.html"
-                class="rounded-xl bg-brand-orange px-3 py-2 text-xs font-bold text-white shadow-soft transition hover:brightness-95 sm:px-4 sm:py-2.5 sm:text-sm">
-                Solicitar Diagnostico
+                class="order-2 rounded-xl bg-brand-coral px-4 py-2.5 text-sm font-bold text-white shadow-soft transition hover:brightness-95 md:order-3">
+                Solicitar informacion
             </a>
         </nav>
     </header>
 
     <main id="contenido">
         <section id="inicio" class="relative overflow-hidden">
-            <div class="absolute -left-24 -top-16 h-56 w-56 rounded-full bg-brand-orange/15 blur-2xl"></div>
-            <div class="absolute -right-20 top-24 h-64 w-64 rounded-full bg-brand-teal/15 blur-2xl"></div>
+            <div class="absolute left-0 top-0 h-64 w-64 -translate-x-1/3 -translate-y-1/3 rounded-full bg-brand-coral/15 blur-3xl"></div>
+            <div class="absolute right-0 top-24 h-72 w-72 translate-x-1/4 rounded-full bg-brand-teal/15 blur-3xl"></div>
 
-            <div class="mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 md:grid-cols-2 md:py-24 lg:gap-16">
+            <div class="mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 md:grid-cols-[1.1fr_0.9fr] md:py-24 lg:gap-16">
                 <div>
-                    <p class="mb-4 inline-flex rounded-full border border-brand-teal/30 bg-brand-teal/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-teal">
-                        Ultima Milla + Almacen
+                    <p class="mb-4 inline-flex rounded-full border border-brand-teal/20 bg-white px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-brand-teal shadow-soft">
+                        Operacion binacional para e-commerce
                     </p>
-                    <h1 class="mb-6 text-4xl font-black leading-tight md:text-6xl">
-                        Entregas mas rapidas, operacion mas simple, clientes mas felices.
+                    <h1 class="mb-6 max-w-3xl text-4xl font-black leading-tight md:text-6xl">
+                        Logistica que escala con tu e-commerce
                     </h1>
-                    <p class="mb-8 max-w-xl text-lg text-slate-700">
-                        En TrackFlow conectamos picking, ruteo y entrega para que tu negocio escale sin perder control operativo.
-                        Disenamos soluciones para e-commerce, retail y distribuidores con cobertura en Mexico y Espana.
+                    <p class="mb-8 max-w-2xl text-lg leading-8 text-slate-700">
+                        Gestion de almacenes, entregas de ultima milla y logistica inversa en Estados Unidos y Espana. Mas de 15 anos ayudando a marcas de moda, electronica y cosmetica a crecer sin preocuparse por la operacion.
                     </p>
                     <div class="flex flex-wrap gap-4">
                         <a href="application.html"
-                            class="rounded-xl bg-brand-teal px-6 py-3 font-bold text-white transition hover:brightness-95">
-                            Quiero una propuesta
+                            class="rounded-xl bg-brand-teal px-6 py-3 font-bold text-white shadow-soft transition hover:brightness-95">
+                            Solicitar informacion
                         </a>
-                        <a href="#beneficios"
-                            class="rounded-xl border border-slate-300 bg-white px-6 py-3 font-bold transition hover:border-slate-500">
-                            Ver beneficios
+                        <a href="#servicios"
+                            class="rounded-xl border border-brand-steel bg-white px-6 py-3 font-bold transition hover:border-brand-ink">
+                            Ver servicios
                         </a>
                     </div>
                 </div>
 
-                <figure class="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-soft">
-                    <img
-                        src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1400&q=80"
-                        alt="Centro logistico con estanterias y operadores preparando pedidos"
-                        class="h-full w-full object-cover">
-                </figure>
+                <div class="rounded-[2rem] border border-white/70 bg-white p-4 shadow-soft">
+                    <div class="grid gap-4 rounded-[1.5rem] bg-brand-ink p-6 text-white">
+                        <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                            <div>
+                                <p class="text-sm uppercase tracking-[0.2em] text-cyan-200">Presencia operativa</p>
+                                <p class="mt-2 text-2xl font-black">Los Angeles + Zaragoza</p>
+                            </div>
+                            <span class="rounded-full bg-white/10 px-3 py-1 text-xs font-bold">Desde 2009</span>
+                        </div>
+                        <div class="grid gap-4 sm:grid-cols-2">
+                            <div class="rounded-2xl bg-white/5 p-4">
+                                <p class="text-sm font-semibold text-cyan-100">Servicios</p>
+                                <p class="mt-2 text-lg font-bold">Almacen, ultima milla y devoluciones</p>
+                            </div>
+                            <div class="rounded-2xl bg-white/5 p-4">
+                                <p class="text-sm font-semibold text-cyan-100">Clientes ideales</p>
+                                <p class="mt-2 text-lg font-bold">Moda, electronica y cosmetica</p>
+                            </div>
+                        </div>
+                        <p class="rounded-2xl bg-gradient-to-r from-brand-teal to-sky-500 p-4 text-sm font-semibold text-white">
+                            Visibilidad operativa de inventario, entregas e incidencias para equipos comerciales y de supply chain.
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="beneficios" class="bg-white py-16 md:py-20 lg:py-24">
+        <section id="servicios" class="py-16 md:py-20 lg:py-24">
             <div class="mx-auto max-w-7xl px-5">
-                <h2 class="mb-3 text-3xl font-black md:text-4xl">Por que empresas eligen TrackFlow</h2>
-                <p class="mb-10 max-w-3xl text-slate-600">Unificamos indicadores de almacen y reparto para que cada decision se base en datos operativos reales.</p>
+                <div class="mb-10 max-w-3xl">
+                    <h2 class="text-3xl font-black md:text-4xl">Servicios</h2>
+                    <p class="mt-3 text-slate-600">TrackFlow conecta operacion, tecnologia y cobertura local para externalizar la logistica sin perder control.</p>
+                </div>
 
-                <div class="grid gap-5 md:grid-cols-3">
-                    <article class="rounded-2xl border border-slate-200 bg-brand-sand p-6 shadow-soft">
-                        <h3 class="mb-3 text-xl font-bold">SLA de entrega consistente</h3>
-                        <p class="text-slate-700">Rutas dinamicas y control por franja horaria para reducir reintentos y aumentar entregas en primer intento.</p>
+                <div class="grid gap-6 lg:grid-cols-3">
+                    <article class="rounded-3xl border border-brand-steel bg-white p-7 shadow-soft">
+                        <h3 class="mb-4 text-2xl font-black">Gestion de Almacenes</h3>
+                        <ul class="space-y-3 text-slate-700">
+                            <li>Almacenamiento, picking y packing</li>
+                            <li>Inventario en tiempo real</li>
+                            <li>Operamos almacenes en Los Angeles y Zaragoza</li>
+                        </ul>
                     </article>
 
-                    <article class="rounded-2xl border border-slate-200 bg-brand-sand p-6 shadow-soft">
-                        <h3 class="mb-3 text-xl font-bold">Visibilidad de punta a punta</h3>
-                        <p class="text-slate-700">Seguimiento de pedidos, incidencias y productividad del almacen desde un mismo tablero operativo.</p>
+                    <article class="rounded-3xl border border-brand-steel bg-white p-7 shadow-soft">
+                        <h3 class="mb-4 text-2xl font-black">Entregas de Ultima Milla</h3>
+                        <ul class="space-y-3 text-slate-700">
+                            <li>Red de carriers certificados en ambos paises</li>
+                            <li>Seguimiento unificado de envios</li>
+                            <li>Gestion de incidencias y devoluciones</li>
+                        </ul>
                     </article>
 
-                    <article class="rounded-2xl border border-slate-200 bg-brand-sand p-6 shadow-soft">
-                        <h3 class="mb-3 text-xl font-bold">Escalado estacional sin caos</h3>
-                        <p class="text-slate-700">Protocolos para picos de demanda con activacion rapida de flota, personal temporal y control de costos.</p>
+                    <article class="rounded-3xl border border-brand-steel bg-white p-7 shadow-soft">
+                        <h3 class="mb-4 text-2xl font-black">Logistica Inversa</h3>
+                        <ul class="space-y-3 text-slate-700">
+                            <li>Gestion completa de devoluciones</li>
+                            <li>Inspeccion y reacondicionamiento</li>
+                            <li>Integracion con tu plataforma de ventas</li>
+                        </ul>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section id="operacion" class="py-16 md:py-20 lg:py-24">
-            <div class="mx-auto grid max-w-7xl gap-10 px-5 md:grid-cols-2">
-                <div>
-                    <h2 class="mb-5 text-3xl font-black md:text-4xl">Operacion pensada para resultados</h2>
-                    <ul class="space-y-4 text-slate-700">
-                        <li class="rounded-xl border border-slate-200 bg-white p-4 shadow-soft">
-                            Cobertura urbana y regional con nodos operativos en CDMX, Guadalajara, Madrid y Barcelona.
-                        </li>
-                        <li class="rounded-xl border border-slate-200 bg-white p-4 shadow-soft">
-                            Integracion con plataformas de e-commerce y WMS para sincronizar inventario y despacho.
-                        </li>
-                        <li class="rounded-xl border border-slate-200 bg-white p-4 shadow-soft">
-                            Soporte operacional bilingue para equipos en Mexico y Espana.
-                        </li>
-                    </ul>
+        <section id="cobertura" class="bg-white py-16 md:py-20 lg:py-24">
+            <div class="mx-auto max-w-7xl px-5">
+                <div class="mb-10 max-w-3xl">
+                    <h2 class="text-3xl font-black md:text-4xl">Cobertura</h2>
+                    <p class="mt-3 text-slate-600">Infraestructura propia y red certificada para operar ambos lados del Atlantico con un unico partner logistico.</p>
                 </div>
 
-                <div class="rounded-2xl border border-slate-200 bg-white p-8 shadow-soft">
-                    <h3 class="mb-4 text-2xl font-black">Indicadores que movemos</h3>
-                    <dl class="space-y-4 text-slate-700">
-                        <div class="flex items-center justify-between border-b border-slate-100 pb-3">
-                            <dt>Tiempo promedio de entrega</dt>
-                            <dd class="font-black text-brand-teal">-22%</dd>
-                        </div>
-                        <div class="flex items-center justify-between border-b border-slate-100 pb-3">
-                            <dt>Entregas exitosas al primer intento</dt>
-                            <dd class="font-black text-brand-teal">+17%</dd>
-                        </div>
-                        <div class="flex items-center justify-between border-b border-slate-100 pb-3">
-                            <dt>Errores de picking en almacen</dt>
-                            <dd class="font-black text-brand-teal">-31%</dd>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <dt>Satisfaccion del cliente final</dt>
-                            <dd class="font-black text-brand-teal">4.7 / 5</dd>
-                        </div>
-                    </dl>
+                <div class="grid gap-6 md:grid-cols-2">
+                    <article class="rounded-3xl border border-brand-steel bg-brand-mist p-7">
+                        <h3 class="mb-4 text-2xl font-black">Estados Unidos</h3>
+                        <ul class="space-y-3 text-slate-700">
+                            <li>Almacen en Los Angeles</li>
+                            <li>Cobertura nacional</li>
+                            <li>Carriers: UPS, FedEx, DHL</li>
+                        </ul>
+                    </article>
+
+                    <article class="rounded-3xl border border-brand-steel bg-brand-mist p-7">
+                        <h3 class="mb-4 text-2xl font-black">Espana</h3>
+                        <ul class="space-y-3 text-slate-700">
+                            <li>Almacen en Zaragoza</li>
+                            <li>Cobertura peninsular e islas</li>
+                            <li>Carriers: MRW, SEUR, DHL</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-20 lg:py-24">
+            <div class="mx-auto max-w-7xl px-5">
+                <div class="mb-10 max-w-3xl">
+                    <h2 class="text-3xl font-black md:text-4xl">Por que TrackFlow</h2>
+                    <p class="mt-3 text-slate-600">Una operacion pensada para equipos de e-commerce que necesitan escalar sin perder trazabilidad ni calidad de servicio.</p>
+                </div>
+
+                <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+                    <article class="rounded-3xl border border-brand-steel bg-white p-6 shadow-soft">
+                        <h3 class="text-xl font-black">Operacion binacional</h3>
+                        <p class="mt-3 text-slate-700">El unico operador con infraestructura propia en Estados Unidos y Espana.</p>
+                    </article>
+
+                    <article class="rounded-3xl border border-brand-steel bg-white p-6 shadow-soft">
+                        <h3 class="text-xl font-black">+130 profesionales</h3>
+                        <p class="mt-3 text-slate-700">Equipos dedicados a tu logistica, desde almacen hasta ultima milla.</p>
+                    </article>
+
+                    <article class="rounded-3xl border border-brand-steel bg-white p-6 shadow-soft">
+                        <h3 class="text-xl font-black">Tecnologia propia</h3>
+                        <p class="mt-3 text-slate-700">Visibilidad total de inventario, envios e incidencias en una sola operacion.</p>
+                    </article>
+
+                    <article class="rounded-3xl border border-brand-steel bg-white p-6 shadow-soft">
+                        <h3 class="text-xl font-black">Especializacion e-commerce</h3>
+                        <p class="mt-3 text-slate-700">Experiencia en moda, electronica y cosmetica para marcas medianas en crecimiento.</p>
+                    </article>
                 </div>
             </div>
         </section>
 
         <section id="contacto" class="bg-brand-ink py-16 text-white md:py-20 lg:py-24">
-            <div class="mx-auto grid max-w-7xl gap-10 px-5 md:grid-cols-2 md:items-center">
+            <div class="mx-auto grid max-w-7xl gap-10 px-5 md:grid-cols-[0.95fr_1.05fr] md:items-center">
                 <div>
-                    <h2 class="mb-4 text-3xl font-black md:text-4xl">Inicia tu diagnostico logistico</h2>
-                    <p class="text-slate-300">Comparte tus datos operativos y te proponemos un plan inicial de mejora para ultima milla y almacen.</p>
+                    <p class="text-sm font-bold uppercase tracking-[0.2em] text-cyan-200">Contacto comercial</p>
+                    <h2 class="mt-4 text-3xl font-black md:text-4xl">Solicita informacion estructurada para tu operacion</h2>
+                    <p class="mt-4 text-slate-300">Comparte los datos de tu empresa y nuestro equipo comercial preparara una respuesta ajustada a tus necesidades logisticas.</p>
                 </div>
-                <div class="grid gap-4 rounded-2xl border border-white/15 bg-white/5 p-6">
-                    <a href="mailto:alianzas@trackflow.example.com" class="font-semibold underline decoration-brand-orange decoration-2 underline-offset-4">alianzas@trackflow.example.com</a>
-                    <p><span class="font-bold">Mexico:</span> +52 55 7001 2840</p>
-                    <p><span class="font-bold">Espana:</span> +34 91 520 1344</p>
+                <div class="grid gap-4 rounded-[2rem] border border-white/10 bg-white/5 p-7 shadow-soft">
+                    <p class="text-sm uppercase tracking-[0.2em] text-cyan-200">Datos de contacto</p>
+                    <a href="mailto:comercial@trackflow.com" class="text-lg font-semibold underline decoration-brand-coral decoration-2 underline-offset-4">comercial@trackflow.com</a>
+                    <p><span class="font-bold">Los Angeles:</span> +1 213 555 0147</p>
+                    <p><span class="font-bold">Zaragoza:</span> +34 976 123 456</p>
                     <a href="application.html"
-                        class="mt-2 inline-block w-fit rounded-xl bg-brand-orange px-5 py-3 font-bold text-white transition hover:brightness-95">
-                        Completar formulario
+                        class="mt-2 inline-block w-fit rounded-xl bg-brand-coral px-5 py-3 font-bold text-white transition hover:brightness-95">
+                        Solicitar informacion
                     </a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="border-t border-slate-200 bg-white py-8">
+    <footer class="border-t border-brand-steel bg-white py-8">
         <div class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-3 px-5 text-sm text-slate-600 md:flex-row md:items-center">
-            <p>© 2026 TrackFlow. Todos los derechos reservados.</p>
-            <p>Ultima milla y almacen para empresas en crecimiento.</p>
+            <p>© 2025 TrackFlow. Todos los derechos reservados.</p>
+            <a href="https://linkedin.com/company/trackflow" class="font-semibold text-brand-teal underline decoration-brand-coral decoration-2 underline-offset-4">LinkedIn</a>
         </div>
     </footer>
 </body>

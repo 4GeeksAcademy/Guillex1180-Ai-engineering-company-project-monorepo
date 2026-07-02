@@ -49,13 +49,24 @@ Estás construyendo **una sola empresa** a lo largo de muchos hitos y proyectos.
 
 ---
 
-## Estado actual de la plantilla
+## Estado actual de este repositorio
 
-> 💡 Actualmente el repositorio ofrece solo una **estructura base de carpetas y documentación**. Todavía no incluye aplicaciones ejecutables ni scripts globales en la raíz.
+> 💡 Además de la estructura base del monorepo, este repo ya incluye una implementación estática del hito web de TrackFlow en la raíz.
 >
-> - `CONTEXT.md` es un placeholder y debe sustituirse por el contexto de la empresa asignada.
-> - No existe todavía un `AGENTS.md` en la raíz.
-> - Existe metadata del paquete compartido en `packages/shared/package.json` (`@repo/shared-types`), pero aún no hay runner de workspace en raíz.
+> - `index.html`: landing pública de TrackFlow.
+> - `application.html`: formulario de solicitud de información para empresas.
+> - `validation.js`: validación en cliente del formulario.
+> - `CONTEXT.es.md` y `CONTEXT.md`: briefing funcional de referencia para el hito.
+
+### Cómo revisar el hito web actual
+
+1. Abre `index.html` en el navegador para revisar la landing.
+2. Abre `application.html` para revisar el formulario y sus validaciones.
+3. Usa `CONTEXT.es.md` como contrato funcional para comprobar contenido, mensajes y restricciones.
+
+### Nota sobre la estructura
+
+Para este hito inicial, la landing y el formulario viven en la raíz para mantener la entrega simple. En hitos posteriores, las interfaces más completas deberían moverse a `uis/` y cualquier backend asociado a `services/`.
 
 ---
 

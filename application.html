@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solicitud de Diagnostico | TrackFlow</title>
-    <meta name="description" content="Formulario para empresas interesadas en servicios de ultima milla y almacen con TrackFlow.">
+    <title>Solicitud de Informacion | TrackFlow</title>
+    <meta name="description" content="Formulario para empresas de e-commerce interesadas en externalizar almacen, ultima milla y logistica inversa con TrackFlow.">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -41,17 +41,21 @@
 
     <main id="contenido" class="mx-auto max-w-5xl px-5 py-10 md:py-14 lg:py-16">
         <section class="mb-10">
-            <h1 class="mb-4 text-3xl font-black md:text-4xl">Formulario de aplicacion empresarial</h1>
-            <p class="max-w-3xl text-slate-700">Comparte los detalles de tu operacion. En menos de 48 horas habiles te contactamos con una propuesta inicial para optimizar ultima milla y almacen.</p>
+            <h1 class="mb-4 text-3xl font-black md:text-4xl">Solicitud de informacion para empresas</h1>
+            <p class="max-w-3xl text-slate-700">Este formulario esta pensado para empresas de e-commerce que buscan externalizar su logistica. Comparte el contexto de tu operacion y nuestro equipo comercial te respondera en las proximas 24-48 horas.</p>
         </section>
 
         <section id="successMessage" class="mb-8 hidden rounded-xl border border-emerald-400 bg-emerald-50 p-6" role="status" aria-live="polite">
-            <h2 class="mb-2 text-xl font-black text-emerald-700">Solicitud enviada con exito</h2>
-            <p class="text-emerald-900">Gracias por contactar a TrackFlow. Nuestro equipo revisara tu informacion y te escribira por correo con los siguientes pasos.</p>
+            <h2 class="mb-2 text-xl font-black text-emerald-700">¡Gracias por tu interes en TrackFlow!</h2>
+            <p class="text-emerald-900">Hemos recibido tu solicitud. Nuestro equipo comercial revisara tu informacion y te contactara en las proximas 24-48 horas para agendar una llamada y conocer tus necesidades logisticas en detalle.</p>
+            <p class="mt-3 text-emerald-900">Si tienes alguna consulta urgente, escribenos directamente a comercial@trackflow.com</p>
         </section>
 
         <form id="applicationForm" class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm md:p-8" novalidate aria-describedby="formInstructions">
             <p id="formInstructions" class="mb-6 text-sm text-slate-600">Los campos marcados con * son obligatorios.</p>
+            <section id="volumeWarning" class="mb-6 hidden rounded-xl border border-amber-300 bg-amber-50 p-4 text-sm text-amber-900" role="alert" aria-live="polite">
+                Para volumenes menores a 100 envios mensuales, nuestros servicios podrian no ser la solucion mas eficiente. ¿Seguro que quieres continuar?
+            </section>
 
             <fieldset class="rounded-xl border border-slate-200 p-4 md:p-5">
                 <legend class="px-2 text-sm font-bold text-slate-700">Datos de contacto</legend>
@@ -76,8 +80,14 @@
 
                 <div>
                     <label for="phone" class="mb-2 block text-sm font-semibold">Telefono de contacto *</label>
-                    <input id="phone" name="phone" type="tel" required placeholder="+52 55 1234 5678" class="w-full rounded-lg border border-slate-300 px-4 py-3 focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/20" aria-describedby="phoneError">
+                    <input id="phone" name="phone" type="tel" required placeholder="+1 213 555 0147" class="w-full rounded-lg border border-slate-300 px-4 py-3 focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/20" aria-describedby="phoneError">
                     <p id="phoneError" class="mt-1 min-h-5 text-sm text-red-600" aria-live="polite"></p>
+                </div>
+
+                <div>
+                    <label for="companyWebsite" class="mb-2 block text-sm font-semibold">Sitio web de la empresa</label>
+                    <input id="companyWebsite" name="companyWebsite" type="url" placeholder="https://tuempresa.com" class="w-full rounded-lg border border-slate-300 px-4 py-3 focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/20" aria-describedby="companyWebsiteError">
+                    <p id="companyWebsiteError" class="mt-1 min-h-5 text-sm text-red-600" aria-live="polite"></p>
                 </div>
                 </div>
             </fieldset>
@@ -90,7 +100,7 @@
                     <label for="country" class="mb-2 block text-sm font-semibold">Pais de operacion principal *</label>
                     <select id="country" name="country" required class="w-full rounded-lg border border-slate-300 px-4 py-3 focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/20" aria-describedby="countryError">
                         <option value="">Selecciona una opcion</option>
-                        <option value="Mexico">Mexico</option>
+                        <option value="Estados Unidos">Estados Unidos</option>
                         <option value="Espana">Espana</option>
                         <option value="Ambos">Ambos</option>
                         <option value="Otro">Otro</option>
@@ -99,66 +109,84 @@
                 </div>
 
                 <div>
-                    <label for="monthlyOrders" class="mb-2 block text-sm font-semibold">Pedidos mensuales estimados *</label>
-                    <input id="monthlyOrders" name="monthlyOrders" type="number" min="100" max="1000000" required class="w-full rounded-lg border border-slate-300 px-4 py-3 focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/20" aria-describedby="monthlyOrdersError">
-                    <p id="monthlyOrdersError" class="mt-1 min-h-5 text-sm text-red-600" aria-live="polite"></p>
-                </div>
-
-                <div>
-                    <label for="serviceType" class="mb-2 block text-sm font-semibold">Servicio principal requerido *</label>
-                    <select id="serviceType" name="serviceType" required class="w-full rounded-lg border border-slate-300 px-4 py-3 focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/20" aria-describedby="serviceTypeError">
+                    <label for="productType" class="mb-2 block text-sm font-semibold">Tipo de producto *</label>
+                    <select id="productType" name="productType" required class="w-full rounded-lg border border-slate-300 px-4 py-3 focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/20" aria-describedby="productTypeError">
                         <option value="">Selecciona una opcion</option>
-                        <option value="Ultima milla">Ultima milla</option>
-                        <option value="Almacen">Almacen</option>
-                        <option value="Ambos">Ambos</option>
+                        <option value="Moda">Moda</option>
+                        <option value="Electronica">Electronica</option>
+                        <option value="Cosmetica">Cosmetica</option>
+                        <option value="Alimentacion">Alimentacion</option>
+                        <option value="Otro">Otro</option>
                     </select>
-                    <p id="serviceTypeError" class="mt-1 min-h-5 text-sm text-red-600" aria-live="polite"></p>
+                    <p id="productTypeError" class="mt-1 min-h-5 text-sm text-red-600" aria-live="polite"></p>
                 </div>
 
                 <div>
-                    <label for="goLive" class="mb-2 block text-sm font-semibold">Fecha objetivo de arranque *</label>
-                    <input id="goLive" name="goLive" type="date" required class="w-full rounded-lg border border-slate-300 px-4 py-3 focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/20" aria-describedby="goLiveError">
-                    <p id="goLiveError" class="mt-1 min-h-5 text-sm text-red-600" aria-live="polite"></p>
+                    <label for="monthlyVolume" class="mb-2 block text-sm font-semibold">Volumen mensual estimado de envios *</label>
+                    <select id="monthlyVolume" name="monthlyVolume" required class="w-full rounded-lg border border-slate-300 px-4 py-3 focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/20" aria-describedby="monthlyVolumeError">
+                        <option value="">Selecciona una opcion</option>
+                        <option value="0-100">0-100</option>
+                        <option value="101-500">101-500</option>
+                        <option value="501-2000">501-2000</option>
+                        <option value="2000+">2000+</option>
+                        <option value="No estoy seguro">No estoy seguro</option>
+                    </select>
+                    <p id="monthlyVolumeError" class="mt-1 min-h-5 text-sm text-red-600" aria-live="polite"></p>
+                </div>
+
+                <div>
+                    <p class="mb-2 block text-sm font-semibold">Servicios de interes *</p>
+                    <div class="grid gap-3 sm:grid-cols-2" aria-describedby="servicesError">
+                        <label class="flex items-center gap-2 rounded-lg border border-slate-200 px-3 py-3">
+                            <input type="checkbox" name="services" value="Almacenaje" class="h-4 w-4">
+                            Almacenaje
+                        </label>
+                        <label class="flex items-center gap-2 rounded-lg border border-slate-200 px-3 py-3">
+                            <input type="checkbox" name="services" value="Ultima milla" class="h-4 w-4">
+                            Ultima milla
+                        </label>
+                        <label class="flex items-center gap-2 rounded-lg border border-slate-200 px-3 py-3 sm:col-span-2">
+                            <input type="checkbox" name="services" value="Logistica inversa" class="h-4 w-4">
+                            Logistica inversa
+                        </label>
+                    </div>
+                    <p id="servicesError" class="mt-1 min-h-5 text-sm text-red-600" aria-live="polite"></p>
                 </div>
             </div>
             </fieldset>
 
             <fieldset class="mt-8 rounded-xl border border-slate-200 p-4 md:p-5">
-                <legend class="mb-3 text-sm font-semibold">Necesidades operativas adicionales *</legend>
-                <div class="grid gap-3 md:grid-cols-2">
-                    <label class="flex items-center gap-2 rounded-lg border border-slate-200 px-3 py-2">
-                        <input type="checkbox" name="needs" value="Tracking en tiempo real" class="h-4 w-4">
-                        Tracking en tiempo real
+                <legend class="mb-3 text-sm font-semibold">¿Actualmente trabajas con otro 3PL? *</legend>
+                <div class="grid gap-3 md:grid-cols-3">
+                    <label class="flex items-center gap-2 rounded-lg border border-slate-200 px-3 py-3">
+                        <input type="radio" name="current3pl" value="Si" class="h-4 w-4">
+                        Si
                     </label>
-                    <label class="flex items-center gap-2 rounded-lg border border-slate-200 px-3 py-2">
-                        <input type="checkbox" name="needs" value="Entregas en mismo dia" class="h-4 w-4">
-                        Entregas en mismo dia
+                    <label class="flex items-center gap-2 rounded-lg border border-slate-200 px-3 py-3">
+                        <input type="radio" name="current3pl" value="No" class="h-4 w-4">
+                        No
                     </label>
-                    <label class="flex items-center gap-2 rounded-lg border border-slate-200 px-3 py-2">
-                        <input type="checkbox" name="needs" value="Devoluciones inversas" class="h-4 w-4">
-                        Devoluciones inversas
-                    </label>
-                    <label class="flex items-center gap-2 rounded-lg border border-slate-200 px-3 py-2">
-                        <input type="checkbox" name="needs" value="Integracion API" class="h-4 w-4">
-                        Integracion API
+                    <label class="flex items-center gap-2 rounded-lg border border-slate-200 px-3 py-3">
+                        <input type="radio" name="current3pl" value="Estoy evaluando opciones" class="h-4 w-4">
+                        Estoy evaluando opciones
                     </label>
                 </div>
-                <p id="needsError" class="mt-1 min-h-5 text-sm text-red-600" aria-live="polite"></p>
+                <p id="current3plError" class="mt-1 min-h-5 text-sm text-red-600" aria-live="polite"></p>
             </fieldset>
 
             <div class="mt-8">
-                <label for="operationNotes" class="mb-2 block text-sm font-semibold">Notas sobre tu operacion *</label>
-                <textarea id="operationNotes" name="operationNotes" rows="4" minlength="30" maxlength="600" required class="w-full rounded-lg border border-slate-300 px-4 py-3 focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/20" aria-describedby="operationNotesError operationNotesCounter"></textarea>
+                <label for="comments" class="mb-2 block text-sm font-semibold">Comentarios o necesidades especificas</label>
+                <textarea id="comments" name="comments" rows="5" class="w-full rounded-lg border border-slate-300 px-4 py-3 focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/20" aria-describedby="commentsError commentsCounter"></textarea>
                 <div class="mt-1 flex items-center justify-between">
-                    <p id="operationNotesError" class="min-h-5 text-sm text-red-600" aria-live="polite"></p>
-                    <span id="operationNotesCounter" class="text-sm text-slate-500">0 / 600</span>
+                    <p id="commentsError" class="min-h-5 text-sm text-red-600" aria-live="polite"></p>
+                    <span id="commentsCounter" class="text-sm text-slate-500">Quedan 500 caracteres</span>
                 </div>
             </div>
 
             <div class="mt-6">
                 <label class="flex items-start gap-3">
                     <input id="privacyConsent" name="privacyConsent" type="checkbox" required class="mt-1 h-4 w-4">
-                    <span>Acepto el tratamiento de datos para fines comerciales y de diagnostico logistico. *</span>
+                    <span>Acepto la politica de privacidad para que TrackFlow procese mis datos y pueda contactarme. *</span>
                 </label>
                 <p id="privacyConsentError" class="mt-1 min-h-5 text-sm text-red-600" aria-live="polite"></p>
             </div>
@@ -176,7 +204,7 @@
 
     <footer class="border-t border-slate-200 bg-white py-8">
         <div class="mx-auto max-w-7xl px-5 text-sm text-slate-600">
-            © 2026 TrackFlow. Operaciones logisticas en Mexico y Espana.
+            © 2025 TrackFlow. Todos los derechos reservados.
         </div>
     </footer>
 </body>
