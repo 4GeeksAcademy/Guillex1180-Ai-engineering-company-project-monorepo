@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "trackflow:typecheck": "tsc --noEmit",
+    "trackflow:demo": "tsx scripts/trackflow-demo.ts",
+    "trackflow:serve": "python3 -m http.server 4173"
+  },
+  "devDependencies": {
+    "tsx": "^4.23.0",
+    "typescript": "^7.0.2"
+  }
+}

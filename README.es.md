@@ -63,6 +63,7 @@ Estás construyendo **una sola empresa** a lo largo de muchos hitos y proyectos.
 1. Abre `index.html` en el navegador para revisar la landing.
 2. Abre `application.html` para revisar el formulario y sus validaciones.
 3. Usa `CONTEXT.es.md` como contrato funcional para comprobar contenido, mensajes y restricciones.
+4. Ejecuta `npm run trackflow:serve` y abre `/playground.html` para probar manualmente filtros, ordenamientos, busquedas y reportes.
 
 ### Nota sobre la estructura
 

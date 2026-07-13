@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrackFlow Playground | Pruebas manuales</title>
+    <meta name="description" content="Playground manual para probar filtrado, ordenamiento, busqueda, validacion y agregaciones de TrackFlow.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        lab: {
+                            ink: "#0f1f1c",
+                            mist: "#eef7f5",
+                            mint: "#0f766e",
+                            clay: "#c2410c",
+                            line: "#cbd5e1"
+                        }
+                    },
+                    boxShadow: {
+                        panel: "0 20px 45px rgba(15, 31, 28, 0.08)"
+                    }
+                }
+            }
+        };
+    </script>
+    <script src="playground.js" defer></script>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-lab-mist via-white to-emerald-50 text-lab-ink antialiased">
+    <main class="mx-auto max-w-7xl px-5 py-10 md:py-14">
+        <section class="mb-8 overflow-hidden rounded-[2rem] border border-white/80 bg-lab-ink text-white shadow-panel">
+            <div class="grid gap-8 px-6 py-8 md:grid-cols-[1.2fr_0.8fr] md:px-8 md:py-10">
+                <div>
+                    <p class="mb-3 inline-flex rounded-full bg-white/10 px-4 py-1 text-xs font-bold uppercase tracking-[0.24em] text-emerald-200">TrackFlow Playground</p>
+                    <h1 class="max-w-3xl text-3xl font-black md:text-5xl">Pruebas manuales para filtros, busquedas, ordenamientos y reportes</h1>
+                    <p class="mt-4 max-w-2xl text-sm leading-7 text-slate-200 md:text-base">Esta pagina usa datos de muestra de TrackFlow para probar operaciones del dominio sin mezclar la landing comercial con herramientas internas de desarrollo.</p>
+                </div>
+                <div class="grid gap-4 rounded-[1.5rem] bg-white/5 p-5">
+                    <div class="rounded-2xl bg-white/10 p-4">
+                        <p class="text-sm font-semibold text-emerald-100">Comando local</p>
+                        <p class="mt-2 break-all font-mono text-sm text-white">npm run trackflow:serve</p>
+                    </div>
+                    <div class="rounded-2xl bg-white/10 p-4">
+                        <p class="text-sm font-semibold text-emerald-100">Ruta</p>
+                        <p class="mt-2 font-mono text-sm text-white">/playground.html</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="grid gap-6 xl:grid-cols-[420px_1fr]">
+            <div class="space-y-6">
+                <article class="rounded-[1.75rem] border border-lab-line bg-white p-6 shadow-panel">
+                    <h2 class="text-xl font-black">Filtrar leads</h2>
+                    <p class="mt-2 text-sm text-slate-600">Combina tipo de producto, servicio y pais operativo.</p>
+                    <div class="mt-5 grid gap-4">
+                        <label class="text-sm font-semibold">
+                            Tipo de producto
+                            <select id="filterIndustry" class="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 font-normal">
+                                <option value="">Todos</option>
+                                <option value="Moda">Moda</option>
+                                <option value="Electronica">Electronica</option>
+                                <option value="Cosmetica">Cosmetica</option>
+                                <option value="Alimentacion">Alimentacion</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </label>
+                        <label class="text-sm font-semibold">
+                            Servicio de interes
+                            <select id="filterService" class="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 font-normal">
+                                <option value="">Todos</option>
+                                <option value="warehouse-management">Gestion de Almacenes</option>
+                                <option value="last-mile-delivery">Ultima Milla</option>
+                                <option value="reverse-logistics">Logistica Inversa</option>
+                            </select>
+                        </label>
+                        <label class="text-sm font-semibold">
+                            Mercado
+                            <select id="filterMarket" class="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 font-normal">
+                                <option value="">Todos</option>
+                                <option value="Estados Unidos">Estados Unidos</option>
+                                <option value="Espana">Espana</option>
+                            </select>
+                        </label>
+                        <button id="runFilterButton" type="button" class="rounded-xl bg-lab-mint px-5 py-3 font-bold text-white transition hover:brightness-95">Ejecutar filtrado</button>
+                    </div>
+                </article>
+
+                <article class="rounded-[1.75rem] border border-lab-line bg-white p-6 shadow-panel">
+                    <h2 class="text-xl font-black">Ordenar almacenes</h2>
+                    <p class="mt-2 text-sm text-slate-600">Prueba orden ascendente o descendente por nombre, ciudad o pais.</p>
+                    <div class="mt-5 grid gap-4">
+                        <label class="text-sm font-semibold">
+                            Campo
+                            <select id="sortField" class="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 font-normal">
+                                <option value="name">Nombre</option>
+                                <option value="city">Ciudad</option>
+                                <option value="countryName">Pais</option>
+                            </select>
+                        </label>
+                        <label class="text-sm font-semibold">
+                            Direccion
+                            <select id="sortDirection" class="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 font-normal">
+                                <option value="asc">Ascendente</option>
+                                <option value="desc">Descendente</option>
+                            </select>
+                        </label>
+                        <button id="runSortButton" type="button" class="rounded-xl bg-slate-900 px-5 py-3 font-bold text-white transition hover:opacity-90">Ejecutar ordenamiento</button>
+                    </div>
+                </article>
+
+                <article class="rounded-[1.75rem] border border-lab-line bg-white p-6 shadow-panel">
+                    <h2 class="text-xl font-black">Buscar servicio</h2>
+                    <p class="mt-2 text-sm text-slate-600">Compara busqueda lineal por tipo con busqueda binaria por titulo.</p>
+                    <div class="mt-5 grid gap-4">
+                        <label class="text-sm font-semibold">
+                            Tipo de servicio
+                            <select id="linearSearchType" class="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 font-normal">
+                                <option value="warehouse-management">Gestion de Almacenes</option>
+                                <option value="last-mile-delivery">Ultima Milla</option>
+                                <option value="reverse-logistics">Logistica Inversa</option>
+                            </select>
+                        </label>
+                        <label class="text-sm font-semibold">
+                            Titulo para busqueda binaria
+                            <select id="binarySearchTitle" class="mt-2 w-full rounded-xl border border-slate-300 px-4 py-3 font-normal">
+                                <option value="Entregas de Ultima Milla">Entregas de Ultima Milla</option>
+                                <option value="Gestion de Almacenes">Gestion de Almacenes</option>
+                                <option value="Logistica Inversa">Logistica Inversa</option>
+                            </select>
+                        </label>
+                        <button id="runSearchButton" type="button" class="rounded-xl bg-lab-clay px-5 py-3 font-bold text-white transition hover:brightness-95">Ejecutar busquedas</button>
+                    </div>
+                </article>
+
+                <article class="rounded-[1.75rem] border border-lab-line bg-white p-6 shadow-panel">
+                    <h2 class="text-xl font-black">Validar y reportar</h2>
+                    <p class="mt-2 text-sm text-slate-600">Genera el reporte agregado y prueba una validacion de negocio con warning de bajo volumen.</p>
+                    <div class="mt-5 grid gap-4 sm:grid-cols-2">
+                        <button id="runReportButton" type="button" class="rounded-xl border border-slate-300 px-5 py-3 font-bold text-slate-800 transition hover:border-slate-500">Generar reporte</button>
+                        <button id="runValidationButton" type="button" class="rounded-xl border border-amber-300 bg-amber-50 px-5 py-3 font-bold text-amber-900 transition hover:bg-amber-100">Validar lead de prueba</button>
+                    </div>
+                </article>
+            </div>
+
+            <div class="space-y-6">
+                <article class="rounded-[1.75rem] border border-lab-line bg-white p-6 shadow-panel">
+                    <div class="flex flex-wrap items-center justify-between gap-3">
+                        <div>
+                            <h2 class="text-xl font-black">Datos base</h2>
+                            <p class="mt-1 text-sm text-slate-600">Resumen rapido del dataset en memoria.</p>
+                        </div>
+                        <button id="resetResultsButton" type="button" class="rounded-xl border border-slate-300 px-4 py-2 text-sm font-bold text-slate-700 transition hover:border-slate-500">Limpiar resultados</button>
+                    </div>
+                    <div id="datasetSummary" class="mt-5 grid gap-3 md:grid-cols-3"></div>
+                </article>
+
+                <article class="rounded-[1.75rem] border border-lab-line bg-white p-6 shadow-panel">
+                    <h2 class="text-xl font-black">Resultado</h2>
+                    <p id="resultLabel" class="mt-1 text-sm text-slate-600">Selecciona una operacion para ver la salida.</p>
+                    <pre id="resultOutput" class="mt-5 overflow-x-auto rounded-2xl bg-slate-950 p-5 text-sm leading-6 text-emerald-200">Esperando accion...</pre>
+                </article>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
