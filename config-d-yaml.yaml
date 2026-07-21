@@ -4,8 +4,9 @@
 
 app:
   name: "TrackFlow Logistics Core"
-  version: "1.2.0"
+  version: "1.0.0"
   env: "production"
+  timeout_ms: 5000
 
 warehouses:
   - id: "WH-LA"
@@ -23,19 +24,20 @@ business_rules:
   scoring:
     threshold_min_score: 50.0
     weights:
-      country_match: 20
-      weight_capacity: 20
-      priority_support: 15
-      fragile_handling: 15
-      reliability_factor: 0.3 # Multiplier for onTimeRate
+      country_match: 20       # +20 si el transportista opera en el país
+      weight_capacity: 20     # +20 si puede manejar el peso
+      priority_support: 15    # +15 si acepta la prioridad
+      fragile_handling: 15    # +15 si maneja productos frágiles
+      reliability_factor: 0.3 # Puntos = onTimeRate * 0.3
 
   pricing_surcharges:
-    priority_express: 0.30     # +30%
-    priority_same_day: 0.60    # +60%
-    priority_standard: 0.00    # +0%
+    priority_standard: 0.00   # +0% adicional
+    priority_express: 0.30    # +30% adicional
+    priority_same_day: 0.60   # +60% adicional
 
   validation_limits:
     product_max_weight_kg: 100
     product_max_dim_cm: 200
     carrier_max_score: 100
     carrier_min_on_time_rate: 0
+    shipment_min_quantity: 1
