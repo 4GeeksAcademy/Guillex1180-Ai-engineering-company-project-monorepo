@@ -25,13 +25,17 @@ No incluye:
 ```text
 src/
 ├── types/
-│   └── index.ts
+│   ├── index.ts
+│   └── models.ts
 ├── utils/
 │   ├── collections.ts
 │   ├── search.ts
 │   ├── transformations.ts
 │   └── validations.ts
-└── __tests__/
+
+Notas:
+- `src/types/index.ts` reexporta desde `src/types/models.ts`.
+- La carpeta `src/__tests__/` se considera recomendada para evolucion del hito, aunque no es obligatoria para compilar.
 ```
 
 Responsabilidades por módulo:
@@ -67,6 +71,15 @@ Distribución base:
 - Historial on-time: 30%
 
 Umbral de descarte recomendado: score menor a 50.
+
+### 4.5 Elegibilidad estricta previa
+Antes de aplicar scoring final, un carrier se descarta si no cumple cualquiera de estas condiciones:
+- Opera en el pais destino.
+- Soporta la prioridad solicitada.
+- Soporta el peso del producto.
+- Si el producto es fragil, debe manejar fragil.
+
+Solo los carriers elegibles pasan al filtro por score y desempate por costo.
 
 ## 5. Reglas de Calidad
 - TypeScript en modo estricto.

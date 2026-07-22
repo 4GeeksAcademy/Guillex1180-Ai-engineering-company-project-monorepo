@@ -1,0 +1,25 @@
+project:
+  name: talent-pipeline-tracker
+  module: frontend-ui
+  version: 1.0.0
+
+environment:
+  mode: development
+  api_base_url: https://playground.4geeks.com/tracker/api/v1
+
+stack:
+  framework: next.js
+  router: app-router
+  language: typescript
+  styling: tailwindcss
+
+development_guidelines:
+  strict_type_checking: true
+  allow_prop_drilling: false
+  external_state_managers_allowed: false
+  async_error_handling_required: true
+
+scripts:
+  dev: npm run dev
+  build: npm run build
+  lint: npm run lint

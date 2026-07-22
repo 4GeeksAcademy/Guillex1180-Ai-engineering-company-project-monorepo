@@ -45,6 +45,26 @@ export function scoreCarrierForShipment(shipment: Shipment, product: Product, ca
   };
 }
 
+function isCarrierEligible(shipment: Shipment, product: Product, carrier: Carrier): boolean {
+  if (!carrier.operatesIn.includes(shipment.destination.country)) {
+    return false;
+  }
+
+  if (!carrier.acceptsPriority.includes(shipment.priority)) {
+    return false;
+  }
+
+  if (product.weightKg > carrier.maxWeightKg) {
+    return false;
+  }
+
+  if (product.isFragile && !carrier.handlesFragile) {
+    return false;
+  }
+
+  return true;
+}
+
 export function selectBestCarrier(
   shipment: Shipment,
   product: Product,
@@ -52,6 +72,7 @@ export function selectBestCarrier(
   minScore: number = 50
 ): CarrierSelection | null {
   const candidates: CarrierSelection[] = carriers
+    .filter((carrier) => isCarrierEligible(shipment, product, carrier))
     .map((carrier) => {
       const scoreBreakdown: CarrierScoreBreakdown = scoreCarrierForShipment(shipment, product, carrier);
       const totalCostUSD: number = calculateShipmentCostUSD(shipment, product, carrier);
